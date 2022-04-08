@@ -23,10 +23,10 @@ def pregunta_01():
     40
 
     """
-    print(np.arange(10))
+    t = tbl0.shape
 
 
-    return
+    return t[0]
 
 
 def pregunta_02():
@@ -37,7 +37,8 @@ def pregunta_02():
     4
 
     """
-    return
+    t = tbl0.shape
+    return t[1]
 
 
 def pregunta_03():
@@ -54,7 +55,16 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+
+    import collections
+
+    list3 = []
+    for letra in tbl0._c1:
+        list3.append(letra)
+    ordenada = sorted(collections.Counter(list3).items())
+    ordenada = dict(ordenada)
+
+    return ordenada
 
 
 def pregunta_04():
