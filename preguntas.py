@@ -55,16 +55,11 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
+    tbl0_copy = tbl0.copy()
+    tbl0_copy = tbl0_copy.sort_values('_c1')
+    List_P3 = tbl0_copy._c1.value_counts(sort=False)
 
-    import collections
-
-    list3 = []
-    for letra in tbl0._c1:
-        list3.append(letra)
-    ordenada = sorted(collections.Counter(list3).items())
-    ordenada = dict(ordenada)
-
-    return ordenada
+    return List_P3 
 
 
 def pregunta_04():
