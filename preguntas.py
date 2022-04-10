@@ -74,7 +74,9 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return
+    tbl0g = tbl0.groupby('_c1')['_c2'].mean()
+
+    return tbl0g
 
 
 def pregunta_05():
@@ -91,7 +93,9 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    tbl0g = tbl0.groupby('_c1')['_c2'].max()
+
+    return tbl0g
 
 
 def pregunta_06():
@@ -103,7 +107,11 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    tbl1_copy = tbl1.copy()
+    List_P6 = list(tbl1._c4.str.upper().unique())
+    List_P6 = sorted(List_P6)
+
+    return List_P6
 
 
 def pregunta_07():
@@ -119,7 +127,9 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    tbl0g = tbl0.groupby('_c1')['_c2'].sum()
+    
+    return tbl0g
 
 
 def pregunta_08():
