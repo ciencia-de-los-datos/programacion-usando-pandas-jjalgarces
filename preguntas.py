@@ -216,7 +216,13 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+
+    tbl1_Ord = tbl1.sort_values('_c4')
+    tbl1g = tbl1_Ord.groupby(['_c0']).agg({'_c4': ','.join})
+    df_full = pd.merge(tbl0, tbl1g, how='outer', left_index=True, right_index=True)
+    df_full.drop(['_c1', '_c2', '_c3'],axis=1, inplace=True)    
+
+    return df_full
 
 
 def pregunta_12():
