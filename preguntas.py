@@ -190,7 +190,14 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+
+    # print('Antes de convertir', tbl0['_c2'].dtype)
+    tbl0['_c2'] = tbl0['_c2'].apply(lambda x: str(x))
+    # print('Luego de convertir', tbl0['_c2'].dtype)
+    tbl0_Ord = tbl0.sort_values('_c2')
+    tbl0g = tbl0_Ord.groupby(['_c1']).agg({'_c2': ':'.join})
+
+    return tbl0g
 
 
 def pregunta_11():
