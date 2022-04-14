@@ -240,7 +240,14 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+
+    tbl2['_c5b'] = tbl2['_c5b'].apply(lambda x: str(x))
+    tbl2_Ord = tbl2.sort_values('_c5a')
+    tbl2_Ord['_c5'] = tbl2_Ord[['_c5a', '_c5b']].apply(':'.join, axis=1)
+    tbl2g = tbl2_Ord.groupby(['_c0']).agg({'_c5': ','.join})
+    tbl2g = tbl2g.reset_index()
+
+    return tbl2g
 
 
 def pregunta_13():
